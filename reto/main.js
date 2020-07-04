@@ -276,3 +276,45 @@ const addVid = (e) => {
       }
 
       modalAddVid();
+
+
+
+    const modalEdit = () => {
+        const btnED = document.querySelector(".pet-action-edit");
+        const modalED = document.querySelector(".formtED");
+        const btnC = document.querySelector("#btncanED2");
+        const formtED = document.querySelector(".formtED");
+  
+        btnED.addEventListener("click", () => {
+          formtED.style.display = "flex";
+          modalED.style.display = "flex";
+        });
+      
+        const nameVid = document.querySelector(".formtED-titulo");
+        const urlVid = document.querySelector(".formtED-url");
+        const descVid = document.querySelector(".formtED-descripcion");
+
+        document.getElementById("tituloED").value = nameVid.textContent;
+        document.getElementById("urlED").value = urlVid.textContent;
+        document.getElementById("descripcionED").value = descVid.textContent;
+      
+        btnC.addEventListener("click", (e) => {
+          e.preventDefault();
+          formtED.style.display = "none";
+          modalED.style.display = "none";
+        });
+      
+        function update() {
+          const btnUpdate = document.querySelector("#btnED");
+          btnUpdate.addEventListener("click", (e) => {
+            e.preventDefault();
+            nameVid.textContent = document.getElementById("nameEdit").value;
+            urlVid.textContent = document.getElementById("countryEdit").value;
+            descVid.textContent = document.getElementById("descriptionEdit").value;
+
+            formtED.style.display = "none";
+            modalED.style.display = "none";
+          });
+        }
+        update();
+    };
