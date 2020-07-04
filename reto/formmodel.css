@@ -1,0 +1,309 @@
+/*Variables*/
+:root {
+    --color-gray: #c4c4c4;
+    --color-white: #ffffff;
+    --color-gray2: #e5e5e5;
+    --color-gray3: #a1a1a1;
+    --color-black: #222222;
+    --font-helvetica: "Helvetica";
+    --font-arial: "Arial";
+  }
+  
+  /*RESETEANDO ESTILOS*/
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    position: relative;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  ul,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    display: block;
+  }
+  
+  .wrapper {
+    max-width: 1440px;
+    min-width: 100%;
+    margin: 0 auto;
+    padding: 0 13px;
+  }
+  @media (min-width: 768px) {
+    .wrapper {
+      padding: 0 3%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .wrapper {
+      padding: 0 13px;
+      margin: 0;
+    }
+  }
+  
+  .pet .wrapper {
+    background: var(--color-white);
+    padding: 1.5rem 13px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    grid-row-gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .pet .wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .pet .wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .header .wrapper {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-gray);
+  }
+  .header .wrapper h1,
+  .header .wrapper .add-pet {
+    font-family: var(--font-helvetica);
+  }
+  .header .wrapper .add-pet {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .header .wrapper .add-pet i {
+    margin-right: 6px;
+  }
+  
+  .pet-action {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    transition: 0.3s ease opacity;
+    opacity: 0;
+  }
+  .pet-action-edit, .pet-action-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pet-action-edit i, .pet-action-delete i {
+    margin-bottom: 3px;
+  }
+  
+  .pet-card {
+    border: 1px solid var(--color-gray3);
+    padding: 7px 15px;
+    transition: 0.3s ease box-shadow;
+    background: var(--color-white);
+    cursor: pointer;
+    font-family: var(--font-helvetica);
+  }
+  .pet-card:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+  .pet-card:hover .pet-action {
+    opacity: 1;
+  }
+  .pet-card img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  .pet-card .pet-information {
+    margin-top: 6px;
+    text-align: center;
+  }
+  .pet-card .pet-separator {
+    margin: 0 4px;
+  }
+  .pet-card .pet-country {
+    margin: 7px 0;
+  }
+  
+  .modal-delete {
+    display: none;
+    width: 469px;
+    height: 150px;
+    padding: 1rem 1.5rem;
+    background: var(--color-white);
+    box-shadow: 0 0 6px rgba(53, 53, 53, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .modal-delete .modal-question {
+    font-family: var(--font-helvetica);
+    font-size: 14px;
+  }
+  @media (min-width: 1200px) {
+    .modal-delete {
+      width: 50%;
+    }
+  }
+  
+  .gray-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+  
+  .modal-buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .modal-buttons .btn {
+    width: 129px;
+    height: 35px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    font-family: var(--font-helvetica);
+    transition: 0.25s ease background;
+  }
+  .modal-buttons #yes {
+    margin-right: 6px;
+    background: var(--color-gray2);
+  }
+  .modal-buttons #yes:hover {
+    background: var(--color-gray3);
+  }
+  .modal-buttons #no:hover {
+    background: var(--color-gray3);
+  }
+  
+  #formAddPet,
+  #formEditPet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: var(--font-helvetica);
+  }
+  #formAddPet h3,
+  #formEditPet h3 {
+    margin-bottom: 1rem;
+  }
+  #formAddPet label,
+  #formEditPet label {
+    margin-bottom: 1rem;
+  }
+  #formAddPet label:last-child,
+  #formEditPet label:last-child {
+    margin-bottom: 0;
+  }
+  #formAddPet input,
+  #formEditPet input {
+    width: 200px;
+    height: 30px;
+    outline: none;
+    padding: 5px;
+    border: 1px solid var(--color-gray3);
+  }
+  #formAddPet label[for=description],
+  #formEditPet label[for=description] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #formAddPet #description,
+  #formAddPet #descriptionEdit,
+  #formEditPet #description,
+  #formEditPet #descriptionEdit {
+    width: 290px;
+    max-width: 300px;
+    min-width: 290px;
+    max-height: 150px;
+    height: 145px;
+    min-height: 150px;
+    outline: none;
+    border: 1px solid var(--color-gray3);
+    padding: 10px;
+    font-family: var(--font-helvetica);
+  }
+  #formAddPet #add,
+  #formAddPet #addEdit,
+  #formEditPet #add,
+  #formEditPet #addEdit {
+    margin-right: 6px;
+    background: #0171ea;
+    color: var(--color-white);
+    border: 1px solid var(--color-gray3);
+  }
+  #formAddPet #add:hover,
+  #formAddPet #addEdit:hover,
+  #formEditPet #add:hover,
+  #formEditPet #addEdit:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-gray3);
+  }
+  #formAddPet #addEdit.update,
+  #formEditPet #addEdit.update {
+    background: #01ea01;
+    transition: 0.3s eases;
+  }
+  #formAddPet #cancel,
+  #formAddPet #cance2,
+  #formEditPet #cancel,
+  #formEditPet #cance2 {
+    border: 1px solid var(--color-gray3);
+  }
+  #formAddPet #cancel:hover,
+  #formAddPet #cance2:hover,
+  #formEditPet #cancel:hover,
+  #formEditPet #cance2:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+  
+  /*# sourceMappingURL=main.css.map */

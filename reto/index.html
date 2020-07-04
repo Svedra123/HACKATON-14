@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton13</title>
+    <link rel="stylesheet" href="/form.css">
+
+</head>
+<body>
+    
+    <div class="barraini">
+    <h2 id="titulo" style="padding-left: 10px; font-size: 36px;">VIDEO TV</h2>
+    
+    <span class="addvid" id="btnAM" onclick="ModalAM()">Agregar video</span>
+    
+    <form id="formAM" class="formcont" action="">
+        
+        <div class="geneAM">
+
+            <div class="barraAM">
+                <h2 style="padding-left: 40px; color: black;">Agregar video</h2>
+                <span class="close1" >X</span>
+            </div>
+
+            <div class="formtAM">
+            
+            <input type="text" name="titulo" id="titulo" placeholder="Titulo">
+            <input type="text" name="url" id="url" placeholder="Url">
+            <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion">
+            <div></div>
+
+            <button id="btnApAM" class="btn">Aceptar</button>
+            <button id="btncanAM" class="btn">Cancelar</button>
+
+
+        </div>
+        </div>
+    </form>
+
+
+    </div>
+    
+    <h2 style="padding-left: 25px;font-size: 28px;">Lista de videos</h2>
+
+
+    <div id="contenedor">
+
+        <div class="ima1">
+
+            <div class="fvid" >
+
+                <div class="imgini">
+                    <div class="edit">
+                        <img class="edpet" id="btnED" onclick="ModalED()" src="/fotos/edit.png" alt="">
+        
+                        <form id="formED" class="formcontED" action="">
+                            
+                            <div class="geneED">
+
+                                <div class="barraED">
+                                    <h2 style="padding-left: 40px;">Agregar video</h2>
+                                    <span class="close0" >X</span>
+                                </div>
+
+                                <div class="formtED">
+                                
+                                    <input type="text" name="titulo" id="" placeholder="Titulo">
+                                    <input type="text" name="url" id="" placeholder="Url">
+                                    <input type="email" name="descripcion" id="" placeholder="Descripcion">
+                                    <div></div>
+
+                                <button class="btn">Aceptar</button>
+                                <button id="btncanED" class="btn">Cancelar</button>
+
+
+                            </div>
+                            </div>
+                        </form>
+
+
+
+
+                        <span >Edit</span>
+                    </div>
+
+
+                    <div class="close">
+
+                        <img class="delete" id="boton2" onclick="Modal2()" src="/fotos/delete.png" alt="">
+                    
+
+                        <div id="verModal2" class="modalContainer2">
+                            <div class="modal-content2">
+                                <span class="closeEl1">×</span>
+                                <h2 style="padding-top: 30px;">Estas seguro que quieres eliminar esta mascota??</h2>
+                                
+                                <button id="btnAP" class="btn">Aceptar</button>
+                                <button id="btncancelar" class="btn">Cancelar</button>
+
+                            </div>
+                        </div>
+                        <span >Delete</span>
+                    </div>
+
+                </div>
+
+                <img class="foto" src="/fotos/logo.png" alt="">
+
+            </div>
+
+            <div style="text-align: left; padding-left: 10px;">
+
+                <h3 style="font-size: 18px;margin-bottom: 9px;">Técnicas de programación </h2>
+
+                
+                <div style="font-size: 11px; color: #303030;">
+                        0 visualizaciones
+                </div>
+
+                <article style="font-size: 12px;color: #808080;line-height: 18px;">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi possimus culpa doloribus. Quidem recusandae necessitatibus 
+                    tempore dignissimos, neque, iure quo delectus optio nisi numquam aspernatur cumque eius blanditiis atque facilis?
+                </article>
+                <br>
+
+            </div>
+
+            <button class="btndetalle">Ver Detalle</button>
+
+        </div>
+      
+
+
+        <div class="ima">
+
+            <div class="fvid" >
+
+                <div class="imgini">
+                    <div class="edit">
+                        <img class="edpet" id="btnED2" onclick="ModalED2()" src="/fotos/edit.png" alt="">
+        
+                        <form id="formED2" class="formcontED" action="">
+                            
+                            <div class="geneED">
+
+                                <div class="barraED">
+                                    <h2 style="padding-left: 40px;">Agregar video</h2>
+                                    <span class="close2"  >X</span>
+                                </div>
+
+                                <div class="formtED">
+                                
+                                    <input type="text" name="titulo" id="" placeholder="Titulo">
+                                    <input type="text" name="url" id="" placeholder="Url">
+                                    <input type="email" name="descripcion" id="" placeholder="Descripcion">
+                                    <div></div>
+
+                                <button class="btn">Aceptar</button>
+                                <button id="btncanED2" class="btn">Cancelar</button>
+
+
+                            </div>
+                            </div>
+                        </form>
+
+
+
+
+                        <span >Edit</span>
+                    </div>
+
+
+                    <div class="close">
+
+                        <img class="delete" id="boton3" onclick="Modal3()" src="/fotos/delete.png" alt="">
+                    
+
+                        <div id="verModal3" class="modalContainer3">
+                            <div class="modal-content3">
+                                <span class="closeEl2">×</span>
+                                <h2 style="padding-top: 30px;">Estas seguro que quieres eliminar esta mascota??</h2>
+                                
+                                <button id="btnAP2" class="btn">Aceptar</button>
+                                <button id="btncancelar2" class="btn">Cancelar</button>
+
+                            </div>
+                        </div>
+                        <span >Delete</span>
+                    </div>
+
+                </div>
+
+                
+                <img class="foto" src="/fotos/logo.png" alt="">
+
+            </div>
+
+            <div style="text-align: left; padding-left: 10px;">
+
+                <h3 style="font-size: 18px;margin-bottom: 9px;">Técnicas de programación </h2>
+
+                
+                <div style="font-size: 11px; color: #303030;">
+                        0 visualizaciones
+                </div>
+
+                <article style="font-size: 12px;color: #808080;line-height: 18px;">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi possimus culpa doloribus. Quidem recusandae necessitatibus 
+                    tempore dignissimos, neque, iure quo delectus optio nisi numquam aspernatur cumque eius blanditiis atque facilis?
+                </article>
+                <br>
+
+            </div>
+
+            <button class="btndetalle">Ver Detalle</button>
+
+        </div>
+
+
+
+
+        <script src="/main.js"></script>
+    </div>
+
+    <script>
+        fetch ("http://localhost:3000/")
+        .then (function(response){
+            return response.js()
+        }) .then (function(post){
+            console.log("post", posts)
+        })
+
+    </script>
+
+
+</body>
+</html>
